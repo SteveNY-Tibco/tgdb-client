@@ -75,7 +75,7 @@ func (elementType ElementType) String() string {
 func FillResultSet(entityStream types.TGInputStream, gof types.TGGraphObjectFactory, resultSet *ResultSet) types.TGError {
 	collection := make([]interface{}, 0)
 	err := FillCollection(entityStream, gof, &collection)
-	logger.Warning(fmt.Sprint("Returning GremlinResult:FillResultSet : '%+v'", collection))
+	logger.Debug(fmt.Sprint("Returning GremlinResult:FillResultSet : '%+v'", collection))
 	for _, entity := range collection {
 		resultSet.AddEntityToResultSet(entity.(types.TGEntity))
 	}
